@@ -1,0 +1,11 @@
+.details {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.stack {
+  margin-top: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,44 @@
+.header {
+  border-bottom: 1px solid var(--border);
+}
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .inner {
+  padding-block: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+}
+
+.name {
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.nav a {
+  color: var(--text-muted);
+}
+
+.nav a:hover {
+  color: var(--text);
+}

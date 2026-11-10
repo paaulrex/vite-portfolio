@@ -1,0 +1,54 @@
+.lede {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 40rem) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: block;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: border-color 150ms;
+}
+
+a.card:hover {
+  border-color: var(--border-hover);
+}
+
+.course {
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.name {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.blurb {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.soon {
+  margin: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+}
