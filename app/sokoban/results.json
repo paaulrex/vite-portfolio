@@ -1,0 +1,2609 @@
+{
+  "generatedFrom": "sokoban/results/*.csv (AI 801 team runs, 2026-04-21)",
+  "runs": [
+    {
+      "source": "dqn_dqn_baseline_20260421_012003.csv",
+      "agent": "dqn",
+      "config": "dqn_baseline",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 25,
+      "solved": 6,
+      "runs": 24,
+      "avgScore": 70.46,
+      "avgTargets": 0.33,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 39.13,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 509.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -21,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 511.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -139.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40.5,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -76.5,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -248,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -30,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -120,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_baseline_20260421_062538.csv",
+      "agent": "dqn",
+      "config": "dqn_baseline",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 16.67,
+      "solved": 4,
+      "runs": 24,
+      "avgScore": 37.83,
+      "avgTargets": 0.25,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 34.89,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -49,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -6,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -75,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -5.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40.5,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -76.5,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -129,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -30,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -115,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_baseline_20260421_120738.csv",
+      "agent": "dqn",
+      "config": "dqn_baseline",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 8.33,
+      "solved": 2,
+      "runs": 24,
+      "avgScore": -40.83,
+      "avgTargets": 0.08,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": -75.34,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -49,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -74,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -149,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -250,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -56.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -112,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_fast_sync_20260421_030648.csv",
+      "agent": "dqn",
+      "config": "dqn_fast_sync",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 25,
+      "solved": 6,
+      "runs": 24,
+      "avgScore": 41.88,
+      "avgTargets": 0.42,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 88.64,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -96,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -117.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -52.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -173,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -143,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -250,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -29,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -117,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_fast_sync_20260421_081952.csv",
+      "agent": "dqn",
+      "config": "dqn_fast_sync",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 8.33,
+      "solved": 2,
+      "runs": 24,
+      "avgScore": -64.5,
+      "avgTargets": 0.08,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": -1.34,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -57,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -77,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -49,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -115.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -73,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -150,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -492.5,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_fast_sync_20260421_144225.csv",
+      "agent": "dqn",
+      "config": "dqn_fast_sync",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 8.33,
+      "solved": 2,
+      "runs": 24,
+      "avgScore": -72.5,
+      "avgTargets": 0.08,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": -87.04,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -79,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -6.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -300,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -500,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -115,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_large_buffer_20260421_042612.csv",
+      "agent": "dqn",
+      "config": "dqn_large_buffer",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 16.67,
+      "solved": 4,
+      "runs": 24,
+      "avgScore": -19,
+      "avgTargets": 0.17,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 26.18,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -15,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -79,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 511.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -117.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -147,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -197,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -288,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -131,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -116,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_large_buffer_20260421_093840.csv",
+      "agent": "dqn",
+      "config": "dqn_large_buffer",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 25,
+      "solved": 6,
+      "runs": 24,
+      "avgScore": 83.38,
+      "avgTargets": 0.42,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 23.69,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -37,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 511.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -41.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -74,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -5.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -82.5,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -76.5,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -124.5,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -30,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_large_buffer_20260421_162559.csv",
+      "agent": "dqn",
+      "config": "dqn_large_buffer",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 16.67,
+      "solved": 4,
+      "runs": 24,
+      "avgScore": 2.33,
+      "avgTargets": 0.25,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": -33.35,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -28,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -26,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -4,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -144,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -176,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -148,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -250,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -106,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_single_network_20260421_052134.csv",
+      "agent": "dqn",
+      "config": "dqn_single_network",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 8.33,
+      "solved": 2,
+      "runs": 24,
+      "avgScore": -18.25,
+      "avgTargets": 0.25,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 49.19,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -54.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -38,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -49,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -70,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -35.5,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -145,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -102.5,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -120,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_single_network_20260421_103649.csv",
+      "agent": "dqn",
+      "config": "dqn_single_network",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 16.67,
+      "solved": 4,
+      "runs": 24,
+      "avgScore": -6.33,
+      "avgTargets": 0.17,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 4.86,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -79.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -99.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -118.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -73,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -150,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -250,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -116,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "dqn_dqn_single_network_20260421_174305.csv",
+      "agent": "dqn",
+      "config": "dqn_single_network",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 8.33,
+      "solved": 2,
+      "runs": 24,
+      "avgScore": -52.04,
+      "avgTargets": 0.08,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": -51.57,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -149.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -97.5,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -100,
+          "avgTargets": 0,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -150,
+          "avgTargets": 0,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -250,
+          "avgTargets": 0,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -118,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "qlearning_baseline_20260421_001330.csv",
+      "agent": "qlearning",
+      "config": "baseline",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 50,
+      "solved": 12,
+      "runs": 24,
+      "avgScore": 229.98,
+      "avgTargets": 1.17,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 129.65,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 508,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -98.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 523,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 33.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -62,
+          "avgTargets": 2,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -103.5,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -58,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -64.25,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_baseline_20260421_052144.csv",
+      "agent": "qlearning",
+      "config": "baseline",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 33.33,
+      "solved": 8,
+      "runs": 24,
+      "avgScore": 139.75,
+      "avgTargets": 0.92,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 129.06,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -18,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -35,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -97.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 523,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 33.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -94.5,
+          "avgTargets": 1,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -77.5,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -68.5,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_baseline_20260421_103702.csv",
+      "agent": "qlearning",
+      "config": "baseline",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 58.33,
+      "solved": 14,
+      "runs": 24,
+      "avgScore": 286.08,
+      "avgTargets": 1.17,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 96.38,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 507.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 509,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -92,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 523,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 522.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 71.5,
+          "avgTargets": 1,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -55,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -59.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -65.5,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_fast_explore_20260421_001338.csv",
+      "agent": "qlearning",
+      "config": "ql_fast_explore",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 50,
+      "solved": 12,
+      "runs": 24,
+      "avgScore": 235.1,
+      "avgTargets": 1.17,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 172.04,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 508.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -37,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -93,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 521,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 532,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 523.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 58.5,
+          "avgTargets": 1,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -117.5,
+          "avgTargets": 2,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -57,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -70.75,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_fast_explore_20260421_052152.csv",
+      "agent": "qlearning",
+      "config": "ql_fast_explore",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 41.67,
+      "solved": 10,
+      "runs": 24,
+      "avgScore": 187.33,
+      "avgTargets": 1,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 155.77,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -71.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -98.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 522.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 33.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 64.5,
+          "avgTargets": 1,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -151.5,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -54,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -78.5,
+          "avgTargets": 0,
+          "targets": 2
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_fast_explore_20260421_103714.csv",
+      "agent": "qlearning",
+      "config": "ql_fast_explore",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 16.67,
+      "solved": 4,
+      "runs": 24,
+      "avgScore": 75.25,
+      "avgTargets": 0.88,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 82.79,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -53.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -36,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -90.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -60,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 33.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 64.5,
+          "avgTargets": 3,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 164,
+          "avgTargets": 2,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -58.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -63.5,
+          "avgTargets": 0.5,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_high_gamma_20260421_001346.csv",
+      "agent": "qlearning",
+      "config": "ql_high_gamma",
+      "schedule": "equal",
+      "episodes": 10000,
+      "solveRate": 33.33,
+      "solved": 8,
+      "runs": 24,
+      "avgScore": 167.46,
+      "avgTargets": 1,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 181.97,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -15,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -30,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -36,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -50,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 522.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 522.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518.5,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 74,
+          "avgTargets": 2,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 88,
+          "avgTargets": 1,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -57,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -71,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_high_gamma_20260421_052200.csv",
+      "agent": "qlearning",
+      "config": "ql_high_gamma",
+      "schedule": "random",
+      "episodes": 10000,
+      "solveRate": 41.67,
+      "solved": 10,
+      "runs": 24,
+      "avgScore": 170.58,
+      "avgTargets": 1.17,
+      "avgTargetsPossible": 2.25,
+      "avgTrainReward": 152,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 507.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -80,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -92.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 521,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 27.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 543,
+          "avgTargets": 3,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 74,
+          "avgTargets": 1,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -359.5,
+          "avgTargets": 3,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -57.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -64.5,
+          "avgTargets": 0,
+          "targets": 3
+        }
+      ]
+    },
+    {
+      "source": "qlearning_ql_high_gamma_20260421_103727.csv",
+      "agent": "qlearning",
+      "config": "ql_high_gamma",
+      "schedule": "progressive",
+      "episodes": 10000,
+      "solveRate": 25,
+      "solved": 6,
+      "runs": 24,
+      "avgScore": 131.06,
+      "avgTargets": 1.04,
+      "avgTargetsPossible": 2.17,
+      "avgTrainReward": 21.62,
+      "levels": [
+        {
+          "level": "easy",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 510,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "medium",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -53.5,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -40,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "hard2",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 511.5,
+          "avgTargets": 1,
+          "targets": 1
+        },
+        {
+          "level": "hard3",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 15.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard4",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 33.5,
+          "avgTargets": 1,
+          "targets": 2
+        },
+        {
+          "level": "hard5",
+          "solveRate": 100,
+          "solved": 2,
+          "runs": 2,
+          "avgScore": 518,
+          "avgTargets": 2,
+          "targets": 2
+        },
+        {
+          "level": "challenge",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -77.5,
+          "avgTargets": 1,
+          "targets": 3
+        },
+        {
+          "level": "challenge1",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 76.5,
+          "avgTargets": 3,
+          "targets": 4
+        },
+        {
+          "level": "challenge2",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": 172.5,
+          "avgTargets": 2,
+          "targets": 6
+        },
+        {
+          "level": "random",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -30,
+          "avgTargets": 0,
+          "targets": 1
+        },
+        {
+          "level": "random-hard",
+          "solveRate": 0,
+          "solved": 0,
+          "runs": 2,
+          "avgScore": -63.75,
+          "avgTargets": 0.5,
+          "targets": 2
+        }
+      ]
+    }
+  ]
+}
