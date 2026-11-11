@@ -394,7 +394,7 @@ const LINES = [
   },
   {
     key: 'epsilon',
-    label: 'Exporation rate (ε)',
+    label: 'Exploration rate (ε)',
     short: 'ε',
     color: 'var(--eps)',
   },
@@ -418,7 +418,7 @@ export function TrainingChart({
 }) {
   const { active, setActive, chartProps } = useActiveMark(points.length);
   const px = (p: Point) => (p.end / total) * 100;
-  const range = (p: Point) => `${fmt(p.start)}-${fmt(p.end)}`;
+  const range = (p: Point) => `${fmt(p.start)}–${fmt(p.end)}`;
   const path = (key: LineKey) =>
     points
       .map((p, i) => `${i ? 'L' : 'M'}${px(p)} ${100 - p[key] * 100}`)
