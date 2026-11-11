@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 
 import { LevelsChart, RunsChart, SERIES_COLOR } from '~/sokoban/charts';
+import { SokobanDemo } from '~/sokoban/demo';
 import {
   AGENT_LABEL,
   bestRun,
@@ -81,7 +82,7 @@ export default function Sokoban() {
         <h1 className={styles.title}>Sokoban RL</h1>
         <p className={styles.lede}>
           Sokoban is a puzzle where you push boxes onto targets. You can only
-          push, never pull, so one careless move can make a level unsolveable.
+          push, never pull, so one careless move can make a level unsolvable.
           We trained two reinforcement-learning agents to play it: tabular
           Q-learning, which keeps a table of every state it has seen, and a deep
           Q-network (DQN), which learns a neural network that estimates the
@@ -91,16 +92,27 @@ export default function Sokoban() {
       </header>
 
       <section className={styles.section}>
+        <h2>Train an agent</h2>
+        <p className={styles.text}>
+          Pick a level and a set of hyperparameters, then train a fresh
+          Q-learning agent right here in your browser. When it finishes, it
+          replays the level with exploration turned off, so you see only what it
+          learned. Challenge 2 isn&rsquo;t offered: in testing it never solved, even
+          after 50,000 training episodes.
+        </p>
+        <SokobanDemo />
+      </section>
+
+      <section className={styles.section}>
         <h2>Results</h2>
         <p className={styles.text}>
           Each of the {totals.runs} runs trained one agent for{' '}
-          {totals.episodesPerRun.toLocaleString()}
-          episodies over all {totals.levels} levelsm then palyed each level
-          twice with exploration turned off ({totals.attemptsPerRun} test
-          attempts). Runs differ in hyperparemeters and in how episodes were
-          split across levels: <em>equal</em> (an even share), <em>random</em>{' '}
-          (a random level each episode) or <em>progressive</em> (more episodes
-          on harder levels).
+          {totals.episodesPerRun.toLocaleString('en-US')} episodes over all{' '}
+          {totals.levels} levels then played each level twice with exploration
+          turned off ({totals.attemptsPerRun} test attempts). Runs differ in
+          hyperparameters and in how episodes were split across levels:{' '}
+          <em>equal</em> (an even share), <em>random</em> (a random level each
+          episode) or <em>progressive</em> (more episodes on harder levels).
         </p>
 
         <div className={styles.tiles}>
@@ -114,7 +126,7 @@ export default function Sokoban() {
             agent='dqn'
             label={`Best ${AGENT_LABEL.dqn} run`}
             value={pct(dqn.run.solveRate)}
-            detail={`${dqn.run.solved} of ${dqn.run.attempts} solved ·  ${
+            detail={`${dqn.run.solved} of ${dqn.run.attempts} solved · ${
               dqn.tiedWith
                 ? `${dqn.tiedWith + 1} runs tied`
                 : dqn.run.configLabel
@@ -122,16 +134,16 @@ export default function Sokoban() {
           />
           <StatTile
             label='Training per run'
-            value={totals.episodesPerRun.toLocaleString()}
+            value={totals.episodesPerRun.toLocaleString('en-US')}
             detail={`episodes across ${totals.levels} levels`}
           />
         </div>
 
         <ul className={styles.findings}>
           <li>
-            Tabular Q-learning beat DQN. It's best run solved{' '}
-            {pct(ql.run.solveRate)}
-            of test attempts, against {pct(dqn.run.solveRate)} for DQN's best.
+            Tabular Q-learning beat DQN. It&rsquo;s best run solved{' '}
+            {pct(ql.run.solveRate)} of test attempts, against{' '}
+            {pct(dqn.run.solveRate)} for DQN's best.
           </li>
           <li>
             Q-learning handled the two- and three-box levels (Hard 3, Hard 5,

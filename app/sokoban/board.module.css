@@ -1,0 +1,58 @@
+.board {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin: 1rem auto 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.floor {
+  position: relative;
+  background: var(--tile-floor);
+}
+
+.wall {
+  background: var(--tile-wall);
+}
+
+.target {
+  position: absolute;
+  inset: 30%;
+  border: 2px solid var(--text-subtle);
+  border-radius: 50%;
+}
+
+.piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 150ms ease;
+}
+
+.piece::before {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border-radius: 4px;
+}
+
+.box::before {
+  background: var(--tile-box);
+}
+
+.boxDone::before {
+  background: var(--tile-box-done);
+}
+
+.player::before {
+  inset: 22%;
+  border-radius: 50%;
+  background: var(--ql);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece {
+    transition: none;
+  }
+}

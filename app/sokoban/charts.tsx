@@ -189,7 +189,7 @@ export function RunsChart({ runs }: { runs: Run[] }) {
   return (
     <ChartCard
       title='Every training run, ranked'
-      subtitle={`Share of the ${runs[0].attempts} test attempts each run solved after ${runs[0].episodes.toLocaleString()} training episodes.`}
+      subtitle={`Share of the ${runs[0].attempts} test attempts each run solved after ${runs[0].episodes.toLocaleString('en-US')} training episodes.`}
       table={
         <table className={styles.dataTable}>
           <thead>

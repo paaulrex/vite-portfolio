@@ -19,6 +19,12 @@
   --border-hover: #a1a1aa;
   --rule: #f4f4f5;
 
+  /* Sokoban board */
+  --tile-floor: #f4f4f5;
+  --tile-wall: #71717a;
+  --tile-box: #a16207;
+  --tile-box-done: #15803d;
+
   /* Chart series */
   --ql: #2a78d6;
   --dqn: #eb6834;
@@ -38,6 +44,10 @@
     --border-strong: #3f3f46;
     --border-hover: #52525b;
     --rule: #27272a;
+
+    --tile-floor: #27272a;
+    --tile-box: #ca8a04;
+    --tile-box-done: #16a34a;
 
     --ql: #3987e5;
     --dqn: #d95926;
@@ -105,7 +115,7 @@ main {
 h1 {
   font-size: 1.875rem;
   line-height: 1.2;
-  padding: 3rem 1rem;
+  font-weight: 600;
 }
 
 h2 {
