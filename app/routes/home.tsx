@@ -31,6 +31,11 @@ const projects = [
     course: 'Deep Learning',
     blurb: 'Classify a scan from the evaluation set.',
   },
+  {
+    name: 'Adventurer’s Forge',
+    course: 'Software Engineer Capstone',
+    blurb: 'A full-stack project for a Dungeon’s and Dragon’s character creation',
+  }
 ];
 
 export default function Home() {

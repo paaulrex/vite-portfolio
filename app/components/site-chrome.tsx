@@ -14,7 +14,7 @@ export function SiteHeader() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to='/' className={styles.name}>
-          Paul De Silos
+          PDS
         </Link>
         <nav className={styles.nav}>
           {LINKS.map((l) => (
