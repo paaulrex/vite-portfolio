@@ -34,8 +34,8 @@ const projects = [
   {
     name: 'Adventurer’s Forge',
     course: 'Software Engineer Capstone',
-    blurb: 'A full-stack project for a Dungeon’s and Dragon’s character creation',
-  }
+    blurb: 'A full-stack project for a Dungeons and Dragons character creator',
+  },
 ];
 
 export default function Home() {
