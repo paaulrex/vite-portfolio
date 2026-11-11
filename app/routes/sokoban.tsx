@@ -82,8 +82,8 @@ export default function Sokoban() {
         <h1 className={styles.title}>Sokoban RL</h1>
         <p className={styles.lede}>
           Sokoban is a puzzle where you push boxes onto targets. You can only
-          push, never pull, so one careless move can make a level unsolvable.
-          We trained two reinforcement-learning agents to play it: tabular
+          push, never pull, so one careless move can make a level unsolvable. We
+          trained two reinforcement-learning agents to play it: tabular
           Q-learning, which keeps a table of every state it has seen, and a deep
           Q-network (DQN), which learns a neural network that estimates the
           value of each move.
@@ -97,8 +97,8 @@ export default function Sokoban() {
           Pick a level and a set of hyperparameters, then train a fresh
           Q-learning agent right here in your browser. When it finishes, it
           replays the level with exploration turned off, so you see only what it
-          learned. Challenge 2 isn&rsquo;t offered: in testing it never solved, even
-          after 50,000 training episodes.
+          learned. Challenge 2 isn&rsquo;t offered: in testing it never solved,
+          even after 50,000 training episodes.
         </p>
         <SokobanDemo />
       </section>

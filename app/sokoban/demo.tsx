@@ -11,9 +11,11 @@ import {
   type LevelId,
   type QConfigId,
 } from './sokoban';
-import { DEMO_LEVELS, Trainer, trackBoxes } from './trainer';
+import { DEMO_LEVELS, Trainer, dueEpisodes, trackBoxes } from './trainer';
 
 const STEP_MS = 200;
+const TRAIN_MS = 5000;
+const SLICE_MS = 12;
 
 const CONFIG_IDS = Object.keys(Q_CONFIGS) as QConfigId[];
 
@@ -25,6 +27,14 @@ type Replay = {
   states: number;
 };
 
+type Progress = { episode: number; solved: number; epsilon: number };
+
+const progressOf = (t: Trainer): Progress => ({
+  episode: t.episode,
+  solved: t.solved,
+  epsilon: t.agent.epsilon,
+});
+
 const boxCount = (n: number) => `${n} ${n === 1 ? 'box' : 'boxes'}`;
 const fmt = (n: number) => n.toLocaleString('en-US');
 
@@ -34,6 +44,9 @@ export function SokobanDemo() {
   const [replay, setReplay] = useState<Replay | null>(null);
   const [frame, setFrame] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [trainer, setTrainer] = useState<Trainer | null>(null);
+  const [progress, setProgress] = useState<Progress | null>(null);
+  const [skipping, setSkipping] = useState(false);
 
   const level = getLevel(levelId);
   const config = Q_CONFIGS[configId];
@@ -51,23 +64,49 @@ export function SokobanDemo() {
     return () => clearTimeout(timer);
   }, [playing, atEnd, frame]);
 
+  useEffect(() => {
+    if (!trainer) return;
+    const t0 = performance.now();
+    let raf = 0;
+    const tick = () => {
+      const due = skipping
+        ? trainer.total
+        : dueEpisodes(trainer.total, performance.now() - t0, TRAIN_MS);
+      trainer.runFor(due, SLICE_MS);
+      setProgress(progressOf(trainer));
+      if (trainer.done) finish(trainer);
+      else raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [trainer, skipping]);
+
   function clear() {
+    setTrainer(null);
+    setSkipping(false);
     setReplay(null);
     setFrame(0);
     setPlaying(false);
   }
 
   function train() {
-    const trainer = new Trainer(level, config);
-    trainer.run(trainer.total);
-    const run = trainer.rollout();
+    clear();
+    const t = new Trainer(level, config);
+    setTrainer(t);
+    setProgress(progressOf(t));
+  }
+
+  function finish(t: Trainer) {
+    const run = t.rollout();
     setReplay({
       frames: run.frames,
       boxes: trackBoxes(run.frames),
       solved: run.solved,
-      episodes: trainer.episode,
-      states: trainer.agent.statesKnown,
+      episodes: t.episode,
+      states: t.agent.statesKnown,
     });
+    setTrainer(null);
+    setSkipping(false);
     setFrame(0);
     setPlaying(true);
   }
@@ -127,9 +166,10 @@ export function SokobanDemo() {
         <button
           type='button'
           className={`${styles.button} ${styles.primary}`}
-          onClick={train}
+          onClick={trainer ? () => setSkipping(true) : train}
+          disabled={skipping}
         >
-          {replay ? 'Train again' : 'Train'}
+          {trainer ? 'Skip to end' : replay ? 'Train again' : 'Train'}
         </button>
       </div>
       <p className={styles.hint}>
@@ -143,6 +183,19 @@ export function SokobanDemo() {
         player={current ? current.player : start.player}
         boxes={replay ? replay.boxes[frame] : start.boxes}
       />
+
+      {trainer && progress && (
+        <div className={styles.progress}>
+          <progress
+            aria-label='Training progress'
+            value={progress.episode}
+            max={trainer.total}
+          />
+          <span className={styles.stepInfo}>
+            {`Episode ${fmt(progress.episode)} of ${fmt(trainer.total)} · ${fmt(progress.solved)} solved · ${progress.epsilon.toFixed(2)}`}
+          </span>
+        </div>
+      )}
 
       {replay && current && (
         <>

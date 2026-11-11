@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
 import { Q_CONFIGS, getLevel } from '../app/sokoban/sokoban';
-import { DEMO_LEVELS, Trainer, trackBoxes } from '../app/sokoban/trainer';
+import {
+  DEMO_LEVELS,
+  Trainer,
+  dueEpisodes,
+  trackBoxes,
+} from '../app/sokoban/trainer';
 
 /** Small seeded PRNG (mulberry32), the same one sokoban.test.ts uses. */
 function seeded(seed: number): () => number {
@@ -57,6 +62,21 @@ describe('Trainer', () => {
     expect(t.solved).toBeLessThanOrEqual(t.total);
   });
 
+  it('runFor stops at the target, capped at the total', () => {
+    const t = new Trainer(getLevel('easy'), Q_CONFIGS.baseline, seeded(4));
+    expect(t.runFor(50, Infinity)).toBe(50);
+    expect(t.runFor(10_000, Infinity)).toBe(450);
+    expect(t.done).toBe(true);
+  });
+
+  it('runFor stops when its time budget runs out', () => {
+    const t = new Trainer(getLevel('easy'), Q_CONFIGS.baseline, seeded(5));
+    const clock = () => t.episode; // pretend each episode takes 1 ms
+    expect(t.runFor(500, 5, clock)).toBe(5);
+    expect(t.runFor(500, 5, clock)).toBe(5);
+    expect(t.episode).toBe(10);
+  });
+
   it.each(['easy', 'medium', 'hard', 'hard2'] as const)(
     'runs the main.py loop: solves %s after full training',
     (id) => {
@@ -65,6 +85,15 @@ describe('Trainer', () => {
       expect(t.rollout().solved).toBe(true);
     },
   );
+});
+
+describe('dueEpisodes', () => {
+  it('spreads a run’s episodes evenly over its duration', () => {
+    expect(dueEpisodes(500, 0, 5000)).toBe(0);
+    expect(dueEpisodes(500, 1000, 5000)).toBe(100);
+    expect(dueEpisodes(500, 2501, 5000)).toBe(251); // rounds up
+    expect(dueEpisodes(500, 9000, 5000)).toBe(500); // never past the total
+  });
 });
 
 describe('trackBoxes', () => {

@@ -46,6 +46,17 @@ export class Trainer {
     return end - start;
   }
 
+  runFor(
+    target: number,
+    budgetMs: number,
+    now: () => number = () => performance.now(),
+  ): number {
+    const start = this.episode;
+    const stop = now() + budgetMs;
+    while (this.episode < target && !this.done && now() < stop) this.run(1);
+    return this.episode - start;
+  }
+
   rollout() {
     return greedyRollout(this.env, this.agent);
   }
@@ -61,4 +72,12 @@ export function trackBoxes(frames: Snapshot[]): number[][] {
     }
     return ids;
   });
+}
+
+export function dueEpisodes(
+  total: number,
+  elapsedMs: number,
+  durationMs: number,
+): number {
+  return Math.min(total, Math.ceil((total * elapsedMs) / durationMs));
 }

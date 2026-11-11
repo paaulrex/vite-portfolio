@@ -91,6 +91,20 @@
   font-size: 0.875rem;
 }
 
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1rem;
+}
+
+.progress progress {
+  flex: 1 1 10rem;
+  height: 0.5rem;
+  accent-color: var(--ql);
+}
+
 @media (min-width: 40rem) {
   .demo {
     padding: 1.5rem;
