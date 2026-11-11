@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "source": {
+    "repo": "paaulrex/AI574-Sentiment-Analysis",
+    "commit": "0556d516b7ebd3614492db212d877183f261fa8a",
+    "exported": "2026-11-10"
+  },
+  "maxLen": 200,
+  "padId": 0,
+  "unkId": 1,
+  "vocab": "vocab.txt",
+  "models": {
+    "nb": {
+      "label": "Naive Bayes + TF-IDF",
+      "threshold": 0.29,
+      "file": "nb.bin",
+      "vocab": "nb-vocab.txt",
+      "logPriorDelta": 1.241318159372895e-11,
+      "sizeBytes": 2400000,
+      "tensors": [
+        {
+          "name": "idf",
+          "dtype": "float32",
+          "shape": [
+            300000
+          ],
+          "offset": 0,
+          "length": 1200000
+        },
+        {
+          "name": "delta",
+          "dtype": "float32",
+          "shape": [
+            300000
+          ],
+          "offset": 1200000,
+          "length": 1200000
+        }
+      ]
+    },
+    "textcnn": {
+      "label": "TextCNN",
+      "threshold": 0.3,
+      "file": "textcnn.bin",
+      "sizeBytes": 7585604,
+      "tensors": [
+        {
+          "name": "embedding",
+          "dtype": "int8",
+          "shape": [
+            50000,
+            128
+          ],
+          "offset": 0,
+          "length": 6400000
+        },
+        {
+          "name": "embedding.scale",
+          "dtype": "float32",
+          "shape": [
+            50000
+          ],
+          "offset": 6400000,
+          "length": 200000
+        },
+        {
+          "name": "conv_3.kernel",
+          "dtype": "float32",
+          "shape": [
+            3,
+            128,
+            128
+          ],
+          "offset": 6600000,
+          "length": 196608
+        },
+        {
+          "name": "conv_3.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 6796608,
+          "length": 512
+        },
+        {
+          "name": "conv_4.kernel",
+          "dtype": "float32",
+          "shape": [
+            4,
+            128,
+            128
+          ],
+          "offset": 6797120,
+          "length": 262144
+        },
+        {
+          "name": "conv_4.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7059264,
+          "length": 512
+        },
+        {
+          "name": "conv_5.kernel",
+          "dtype": "float32",
+          "shape": [
+            5,
+            128,
+            128
+          ],
+          "offset": 7059776,
+          "length": 327680
+        },
+        {
+          "name": "conv_5.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7387456,
+          "length": 512
+        },
+        {
+          "name": "dense.kernel",
+          "dtype": "float32",
+          "shape": [
+            384,
+            128
+          ],
+          "offset": 7387968,
+          "length": 196608
+        },
+        {
+          "name": "dense.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7584576,
+          "length": 512
+        },
+        {
+          "name": "out.kernel",
+          "dtype": "float32",
+          "shape": [
+            128,
+            1
+          ],
+          "offset": 7585088,
+          "length": 512
+        },
+        {
+          "name": "out.bias",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "offset": 7585600,
+          "length": 4
+        }
+      ]
+    },
+    "bilstm": {
+      "label": "BiLSTM + Attention",
+      "threshold": 0.37,
+      "file": "bilstm.bin",
+      "sizeBytes": 7916868,
+      "tensors": [
+        {
+          "name": "embedding",
+          "dtype": "int8",
+          "shape": [
+            50000,
+            128
+          ],
+          "offset": 0,
+          "length": 6400000
+        },
+        {
+          "name": "embedding.scale",
+          "dtype": "float32",
+          "shape": [
+            50000
+          ],
+          "offset": 6400000,
+          "length": 200000
+        },
+        {
+          "name": "fwd.kernel",
+          "dtype": "float32",
+          "shape": [
+            128,
+            512
+          ],
+          "offset": 6600000,
+          "length": 262144
+        },
+        {
+          "name": "fwd.recurrent",
+          "dtype": "float32",
+          "shape": [
+            128,
+            512
+          ],
+          "offset": 6862144,
+          "length": 262144
+        },
+        {
+          "name": "fwd.bias",
+          "dtype": "float32",
+          "shape": [
+            512
+          ],
+          "offset": 7124288,
+          "length": 2048
+        },
+        {
+          "name": "bwd.kernel",
+          "dtype": "float32",
+          "shape": [
+            128,
+            512
+          ],
+          "offset": 7126336,
+          "length": 262144
+        },
+        {
+          "name": "bwd.recurrent",
+          "dtype": "float32",
+          "shape": [
+            128,
+            512
+          ],
+          "offset": 7388480,
+          "length": 262144
+        },
+        {
+          "name": "bwd.bias",
+          "dtype": "float32",
+          "shape": [
+            512
+          ],
+          "offset": 7650624,
+          "length": 2048
+        },
+        {
+          "name": "attn.kernel",
+          "dtype": "float32",
+          "shape": [
+            256,
+            128
+          ],
+          "offset": 7652672,
+          "length": 131072
+        },
+        {
+          "name": "attn.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7783744,
+          "length": 512
+        },
+        {
+          "name": "attn.context",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7784256,
+          "length": 512
+        },
+        {
+          "name": "dense.kernel",
+          "dtype": "float32",
+          "shape": [
+            256,
+            128
+          ],
+          "offset": 7784768,
+          "length": 131072
+        },
+        {
+          "name": "dense.bias",
+          "dtype": "float32",
+          "shape": [
+            128
+          ],
+          "offset": 7915840,
+          "length": 512
+        },
+        {
+          "name": "out.kernel",
+          "dtype": "float32",
+          "shape": [
+            128,
+            1
+          ],
+          "offset": 7916352,
+          "length": 512
+        },
+        {
+          "name": "out.bias",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "offset": 7916864,
+          "length": 4
+        }
+      ]
+    }
+  }
+}
