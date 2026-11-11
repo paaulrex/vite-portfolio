@@ -143,7 +143,7 @@ export default function Sokoban() {
           <li>
             Tabular Q-learning beat DQN. It&rsquo;s best run solved{' '}
             {pct(ql.run.solveRate)} of test attempts, against{' '}
-            {pct(dqn.run.solveRate)} for DQN's best.
+            {pct(dqn.run.solveRate)} for DQN&rsquo;s best.
           </li>
           <li>
             Q-learning handled the two- and three-box levels (Hard 3, Hard 5,

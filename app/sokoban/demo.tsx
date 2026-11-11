@@ -192,7 +192,7 @@ export function SokobanDemo() {
             max={trainer.total}
           />
           <span className={styles.stepInfo}>
-            {`Episode ${fmt(progress.episode)} of ${fmt(trainer.total)} · ${fmt(progress.solved)} solved · ${progress.epsilon.toFixed(2)}`}
+            {`Episode ${fmt(progress.episode)} of ${fmt(trainer.total)} · ${fmt(progress.solved)} solved · ε ${progress.epsilon.toFixed(2)}`}
           </span>
         </div>
       )}
@@ -235,7 +235,7 @@ export function SokobanDemo() {
             {fmt(replay.states)} distinct positions. With exploration off, it{' '}
             {replay.solved
               ? `solved the level in ${moves} moves.`
-              : `didn't solve the level within ${level.maxSteps} moves.`}
+              : `didn’t solve the level within ${level.maxSteps} moves.`}
           </p>
         </>
       )}
