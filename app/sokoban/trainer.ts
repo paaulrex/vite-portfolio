@@ -14,12 +14,24 @@ import {
 
 export const DEMO_LEVELS = LEVELS.filter((l) => l.id !== 'challenge2');
 
+const CHART_POINTS = 50;
+
+export type Point = {
+  start: number;
+  end: number;
+  solveRate: number;
+  epsilon: number;
+};
+
 export class Trainer {
   readonly env: SokobanEnv;
   readonly agent: QLearningAgent;
   readonly total: number;
+  readonly every: number;
+  readonly history: Point[] = [];
   episode = 0;
   solved = 0;
+  private last = { episode: 0, solved: 0 };
 
   constructor(
     level: LevelSpec,
@@ -29,6 +41,7 @@ export class Trainer {
     this.env = new SokobanEnv(level);
     this.agent = new QLearningAgent(config, rng);
     this.total = level.suggestedEpisodes;
+    this.every = Math.ceil(this.total / CHART_POINTS);
   }
 
   get done(): boolean {
@@ -42,6 +55,7 @@ export class Trainer {
       if (trainEpisode(this.env, this.agent).solved) this.solved++;
       this.agent.decayEpsilon();
       this.episode++;
+      if (this.episode % this.every === 0 || this.done) this.record();
     }
     return end - start;
   }
@@ -59,6 +73,17 @@ export class Trainer {
 
   rollout() {
     return greedyRollout(this.env, this.agent);
+  }
+
+  private record() {
+    const { episode, solved, last } = this;
+    this.history.push({
+      start: last.episode + 1,
+      end: episode,
+      solveRate: (solved - last.solved) / (episode - last.episode),
+      epsilon: this.agent.epsilon,
+    });
+    this.last = { episode, solved };
   }
 }
 

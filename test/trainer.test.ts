@@ -87,6 +87,50 @@ describe('Trainer', () => {
   );
 });
 
+describe('Trainer history', () => {
+  it('records 50 evenly spaced points, whatever the level size', () => {
+    for (const id of ['easy', 'medium'] as const) {
+      const t = new Trainer(getLevel(id), Q_CONFIGS.baseline, seeded(7));
+      t.run(t.total);
+      expect(t.history.map((p) => p.end)).toEqual(
+        Array.from({ length: 50 }, (_, i) => (i + 1) * t.every),
+      );
+    }
+  });
+
+  it('records the same history however the episodes are batched', () => {
+    const a = new Trainer(getLevel('easy'), Q_CONFIGS.baseline, seeded(8));
+    const b = new Trainer(getLevel('easy'), Q_CONFIGS.baseline, seeded(8));
+    a.run(a.total);
+    while (!b.done) b.run(7);
+    expect(b.history).toEqual(a.history);
+  });
+
+  it('covers every episode once, ending with a short final stretch', () => {
+    const level = { ...getLevel('easy'), suggestedEpisodes: 510 };
+    const t = new Trainer(level, Q_CONFIGS.baseline, seeded(9));
+    t.run(t.total);
+    expect(t.every).toBe(11);
+    expect(t.history).toHaveLength(47);
+    t.history.forEach((p, i) =>
+      expect(p.start).toBe(i === 0 ? 1 : t.history[i - 1].end + 1),
+    );
+    expect(t.history.at(-1)).toMatchObject({ start: 507, end: 510 });
+    const solved = t.history.reduce(
+      (sum, p) => sum + p.solveRate * (p.end - p.start + 1),
+      0,
+    );
+    expect(solved).toBeCloseTo(t.solved, 9);
+  });
+
+  it('stores epsilon as of the end of each stretch', () => {
+    const t = new Trainer(getLevel('easy'), Q_CONFIGS.baseline, seeded(10));
+    t.run(t.total);
+    expect(t.history[0].epsilon).toBeCloseTo(0.9995 ** t.every, 12);
+    expect(t.history.at(-1)?.epsilon).toBe(t.agent.epsilon);
+  });
+});
+
 describe('dueEpisodes', () => {
   it('spreads a run’s episodes evenly over its duration', () => {
     expect(dueEpisodes(500, 0, 5000)).toBe(0);

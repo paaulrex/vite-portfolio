@@ -11,7 +11,14 @@ import {
   type LevelId,
   type QConfigId,
 } from './sokoban';
-import { DEMO_LEVELS, Trainer, dueEpisodes, trackBoxes } from './trainer';
+import {
+  DEMO_LEVELS,
+  Trainer,
+  dueEpisodes,
+  trackBoxes,
+  type Point,
+} from './trainer';
+import { TrainingChart } from './charts';
 
 const STEP_MS = 200;
 const TRAIN_MS = 5000;
@@ -27,12 +34,18 @@ type Replay = {
   states: number;
 };
 
-type Progress = { episode: number; solved: number; epsilon: number };
+type Progress = {
+  episode: number;
+  solved: number;
+  epsilon: number;
+  points: Point[];
+};
 
 const progressOf = (t: Trainer): Progress => ({
   episode: t.episode,
   solved: t.solved,
   epsilon: t.agent.epsilon,
+  points: t.history.slice(),
 });
 
 const boxCount = (n: number) => `${n} ${n === 1 ? 'box' : 'boxes'}`;
@@ -87,6 +100,7 @@ export function SokobanDemo() {
     setReplay(null);
     setFrame(0);
     setPlaying(false);
+    setProgress(null);
   }
 
   function train() {
@@ -192,7 +206,7 @@ export function SokobanDemo() {
             max={trainer.total}
           />
           <span className={styles.stepInfo}>
-            {`Episode ${fmt(progress.episode)} of ${fmt(trainer.total)} · ${fmt(progress.solved)} solved · ε ${progress.epsilon.toFixed(2)}`}
+            {`Episode ${fmt(progress.episode)} of ${fmt(trainer.total)} · ${fmt(progress.solved)} solved · ε ${Math.round(progress.epsilon * 100)}%`}
           </span>
         </div>
       )}
@@ -238,6 +252,13 @@ export function SokobanDemo() {
               : `didn’t solve the level within ${level.maxSteps} moves.`}
           </p>
         </>
+      )}
+
+      {progress && (
+        <TrainingChart
+          points={progress.points}
+          total={level.suggestedEpisodes}
+        />
       )}
     </div>
   );

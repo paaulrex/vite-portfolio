@@ -1,4 +1,9 @@
-import { useState, type KeyboardEvent, type ReactNode } from 'react';
+import {
+  useState,
+  type KeyboardEvent,
+  type PointerEvent,
+  type ReactNode,
+} from 'react';
 
 import {
   AGENTS,
@@ -9,21 +14,37 @@ import {
   type Run,
 } from './results';
 import styles from './charts.module.css';
+import type { Point } from './trainer';
 
 export const SERIES_COLOR: Record<Agent, string> = {
   qlearning: 'var(--ql)',
   dqn: 'var(--dqn)',
 };
 
+type LegendItem = { label: string; color: string };
+
+const AGENT_LEGEND: LegendItem[] = AGENTS.map((a) => ({
+  label: AGENT_LABEL[a],
+  color: SERIES_COLOR[a],
+}));
+
+const ARROW_STEP: Record<string, number> = {
+  ArrowDown: 1,
+  ArrowRight: 1,
+  ArrowUp: -1,
+  ArrowLeft: -1,
+};
+
 const TICKS = [0, 25, 50, 75, 100];
 
 const pct = (n: number) => `${Math.round(n)}%`;
+const fmt = (n: number) => n.toLocaleString('en-US');
 
 function useActiveMark(count: number) {
   const [active, setActive] = useState<number | null>(null);
 
   function onKeyDown(e: KeyboardEvent) {
-    const step = { ArrowDown: 1, ArrowUp: -1 }[e.key];
+    const step = ARROW_STEP[e.key];
     if (!step) return;
     e.preventDefault();
     setActive((i) =>
@@ -61,7 +82,7 @@ function ChartCard({
         <h3>{title}</h3>
         <p className={styles.subtitle}>{subtitle}</p>
       </figcaption>
-      <Legend />
+      <Legend items={AGENT_LEGEND} />
       {children}
       <details className={styles.details}>
         <summary>Show as table</summary>
@@ -71,17 +92,17 @@ function ChartCard({
   );
 }
 
-function Legend() {
+function Legend({ items }: { items: readonly LegendItem[] }) {
   return (
     <ul className={styles.legend}>
-      {AGENTS.map((a) => (
-        <li key={a}>
+      {items.map(({ label, color }) => (
+        <li key={label}>
           <span
             aria-hidden
             className={styles.swatch}
-            style={{ background: SERIES_COLOR[a] }}
+            style={{ background: color }}
           />
-          {AGENT_LABEL[a]}
+          {label}
         </li>
       ))}
     </ul>
@@ -127,7 +148,7 @@ function Bar({
   agent: Agent;
   value: number;
   className: string;
-  active: Boolean;
+  active: boolean;
   tooltip: ReactNode;
 }) {
   return (
@@ -184,7 +205,7 @@ function TooltipBody({
 export function RunsChart({ runs }: { runs: Run[] }) {
   const { active, setActive, chartProps } = useActiveMark(runs.length);
   const describe = (r: Run) =>
-    `${AGENT_LABEL[r.agent]}, ${r.configLabel}, ${r.schedule}, schedule: ${pct(r.solveRate)}, ${r.solved} of ${r.attempts} solved`;
+    `${AGENT_LABEL[r.agent]}, ${r.configLabel}, ${r.schedule} schedule: ${pct(r.solveRate)}, ${r.solved} of ${r.attempts} solved`;
 
   return (
     <ChartCard
@@ -282,7 +303,7 @@ export function LevelsChart({ levels }: { levels: LevelSummary[] }) {
   return (
     <ChartCard
       title='What each agent learned, level by level'
-      subtitle='Test attempts solved on each elvel, pooled across all runs of that agent.'
+      subtitle='Test attempts solved on each level, pooled across all runs of that agent.'
       table={
         <table className={styles.dataTable}>
           <thead>
@@ -361,5 +382,178 @@ export function LevelsChart({ levels }: { levels: LevelSummary[] }) {
         {active === null ? '' : describe(marks[active])}
       </p>
     </ChartCard>
+  );
+}
+
+const LINES = [
+  {
+    key: 'solveRate',
+    label: 'Solve rate while exploring',
+    short: 'Solved',
+    color: 'var(--ql)',
+  },
+  {
+    key: 'epsilon',
+    label: 'Exporation rate (ε)',
+    short: 'ε',
+    color: 'var(--eps)',
+  },
+] as const;
+
+type LineKey = (typeof LINES)[number]['key'];
+
+function spread(a: number, b: number, gap = 14): [number, number] {
+  if (Math.abs(a - b) >= gap) return [a, b];
+  const mid = Math.min(100 - gap / 2, Math.max(gap / 2, (a + b) / 2));
+  const half = a >= b ? gap / 2 : -gap / 2;
+  return [mid + half, mid - half];
+}
+
+export function TrainingChart({
+  points,
+  total,
+}: {
+  points: Point[];
+  total: number;
+}) {
+  const { active, setActive, chartProps } = useActiveMark(points.length);
+  const px = (p: Point) => (p.end / total) * 100;
+  const range = (p: Point) => `${fmt(p.start)}-${fmt(p.end)}`;
+  const path = (key: LineKey) =>
+    points
+      .map((p, i) => `${i ? 'L' : 'M'}${px(p)} ${100 - p[key] * 100}`)
+      .join(' ');
+  const last = points.at(-1);
+  const ends = last && spread(last.solveRate * 100, last.epsilon * 100);
+  const hover = active === null ? undefined : points[active];
+
+  function onPointerMove(e: PointerEvent<HTMLDivElement>) {
+    if (!points.length) return;
+    const box = e.currentTarget.getBoundingClientRect();
+    const episode = ((e.clientX - box.left) / box.width) * total;
+    const i = Math.round(episode / points[0].end) - 1;
+    setActive(Math.min(points.length - 1, Math.max(0, i)));
+  }
+
+  return (
+    <figure className={styles.training}>
+      <figcaption>
+        <h3>Learning curve</h3>
+        <p className={styles.subtitle}>
+          How often the agent solved the level while still exploring, next to ε,
+          the share of moves it makes at random.
+        </p>
+      </figcaption>
+      <Legend items={LINES} />
+      <div
+        {...chartProps}
+        role='group'
+        aria-label='Learning curve: solve rate and exploration rate over training. Use the arrow keys to step through points.'
+        className={`${styles.chart} ${styles.plot}`}
+        onPointerMove={onPointerMove}
+      >
+        {TICKS.map((t) => (
+          <div
+            key={t}
+            aria-hidden
+            className={styles.hLine}
+            style={{ bottom: `${t}%` }}
+          >
+            <span className={styles.yTick}>{t}%</span>
+          </div>
+        ))}
+        <svg
+          aria-hidden
+          viewBox='0 0 100 100'
+          preserveAspectRatio='none'
+          className={styles.lines}
+        >
+          {LINES.map((l) => (
+            <path key={l.key} d={path(l.key)} stroke={l.color} />
+          ))}
+        </svg>
+        {last &&
+          ends &&
+          LINES.map((l, i) => (
+            <span
+              key={l.key}
+              aria-hidden
+              className={styles.endLabel}
+              style={{ left: `${px(last)}%`, bottom: `${ends[i]}%` }}
+            >
+              {`${l.short} ${pct(last[l.key] * 100)}`}
+            </span>
+          ))}
+        {hover && (
+          <>
+            <div
+              aria-hidden
+              className={styles.crosshair}
+              style={{ left: `${px(hover)}%` }}
+            />
+            {LINES.map((l) => (
+              <span
+                key={l.key}
+                aria-hidden
+                className={styles.dot}
+                style={{
+                  left: `${px(hover)}%`,
+                  bottom: `${hover[l.key] * 100}%`,
+                  background: l.color,
+                }}
+              />
+            ))}
+            <div
+              className={styles.tooltip}
+              style={{ left: `clamp(6.5rem, ${px(hover)}%, 100% - 6.5rem)` }}
+            >
+              <div className={styles.tipValue}>Episodes {range(hover)}</div>
+              {LINES.map((l) => (
+                <div key={l.key} className={styles.tipHead}>
+                  <span
+                    aria-hidden
+                    className={styles.tipKey}
+                    style={{ background: l.color }}
+                  />
+                  {`${l.short} ${pct(hover[l.key] * 100)}`}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div aria-hidden className={styles.xAxis}>
+        <span>0</span>
+        <span>{fmt(total)} episodes</span>
+      </div>
+      <details className={styles.details}>
+        <summary>Show as table</summary>
+        <div className={styles.tableScroll}>
+          <table className={styles.dataTable}>
+            <thead>
+              <tr>
+                <th>Episodes</th>
+                <th>Solved</th>
+                <th>ε</th>
+              </tr>
+            </thead>
+            <tbody>
+              {points.map((p) => (
+                <tr key={p.end}>
+                  <td>{range(p)}</td>
+                  <td>{pct(p.solveRate * 100)}</td>
+                  <td>{pct(p.epsilon * 100)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <p aria-live='polite' className={styles.srOnly}>
+        {hover
+          ? `Episodes ${range(hover)}: ${pct(hover.solveRate * 100)} solved, ε ${pct(hover.epsilon * 100)}`
+          : ''}
+      </p>
+    </figure>
   );
 }
