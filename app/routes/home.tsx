@@ -25,6 +25,7 @@ const projects = [
     name: 'Steam review sentiment',
     course: 'Natural Language Processing',
     blurb: 'Type a review and three models vote on it.',
+    to: '/projects/steam-sentiment/',
   },
   {
     name: 'Brain MRI tumor CNN',

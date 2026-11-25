@@ -1,0 +1,100 @@
+.scroll {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 36rem;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.caption {
+  margin-bottom: 0.75rem;
+  text-align: left;
+  color: var(--text-muted);
+}
+
+.table th,
+.table td {
+  padding: 0.625rem 1rem 0.625rem 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table thead th {
+  font-weight: 500;
+  color: var(--text-muted);
+  vertical-align: bottom;
+}
+
+.table tbody tr {
+  border-top: 1px solid var(--rule);
+}
+
+.table tbody th {
+  font-weight: 500;
+}
+
+.meta {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-subtle);
+}
+
+.plotHead {
+  width: 40%;
+}
+
+.ticks,
+.plot {
+  position: relative;
+  margin-right: 3.5rem;
+}
+
+.ticks {
+  display: block;
+  height: 1rem;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-subtle);
+}
+
+.ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.plot {
+  height: 1.5rem;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--rule);
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+  transform: translate(-50%, -50%);
+}
+
+.value {
+  position: absolute;
+  top: 50%;
+  padding-left: 0.75rem;
+  transform: translateY(-50%);
+  font-weight: 500;
+}

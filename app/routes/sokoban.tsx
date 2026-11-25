@@ -11,7 +11,7 @@ import {
   type Agent,
 } from '~/sokoban/results';
 import type { Route } from './+types/sokoban';
-import styles from './sokoban.module.css';
+import styles from '~/components/project.module.css';
 
 /** TODO: Need more descriptions */
 const CREDIT =

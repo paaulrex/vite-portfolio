@@ -30,6 +30,7 @@
   --dqn: #eb6834;
 
   --eps: #71717a;
+  --accent: var(--ql);
 
   color-scheme: light dark;
 }
