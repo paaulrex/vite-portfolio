@@ -40,7 +40,7 @@ export function ScoreTable() {
               <th scope='row'>
                 {m.label}
                 <span className={styles.meta}>
-                  {m.live ? 'Runs in your browser' : 'Too bug to run here'}
+                  {m.live ? 'Runs in your browser' : 'Too big to run here'}
                 </span>
               </th>
               <td>

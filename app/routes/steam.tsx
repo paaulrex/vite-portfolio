@@ -40,8 +40,8 @@ export default function Steam() {
         <p className={styles.lede}>
           Can a model tell from the words alone whether a steam review
           recommends the game? I trained four, from a Naive Bayes baseline to a
-          fine-tuned BERT, on {fmt(TRAIN_REVIEWS)} revies. Then I tested them on{' '}
-          {fmt(TEST_SET.reviews)} revies of {TEST_SET.games} games released in
+          fine-tuned BERT, on {fmt(TRAIN_REVIEWS)} reviews. Then I tested them on{' '}
+          {fmt(TEST_SET.reviews)} reviews of {TEST_SET.games} games released in
           2025-26, newer than anything they trained on
         </p>
         <a href={REPO} className={styles.repo}>
