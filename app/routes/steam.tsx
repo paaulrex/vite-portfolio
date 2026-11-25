@@ -1,11 +1,10 @@
 import { Link } from 'react-router';
 
 import styles from '~/components/project.module.css';
-import { RESULTS, TEST_SET, TRAIN_REVIEWS } from '~/steam/results';
+import { REPO, RESULTS, TEST_SET, TRAIN_REVIEWS } from '~/steam/results';
 import { ScoreTable } from '~/steam/score-table';
 import type { Route } from './+types/steam';
-
-const REPO = 'https://github.com/paaulrex/AI574-Sentiment-Analysis';
+import { SentimentDemo } from '~/steam/demo';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -40,14 +39,24 @@ export default function Steam() {
         <p className={styles.lede}>
           Can a model tell from the words alone whether a steam review
           recommends the game? I trained four, from a Naive Bayes baseline to a
-          fine-tuned BERT, on {fmt(TRAIN_REVIEWS)} reviews. Then I tested them on{' '}
-          {fmt(TEST_SET.reviews)} reviews of {TEST_SET.games} games released in
-          2025-26, newer than anything they trained on
+          fine-tuned BERT, on {fmt(TRAIN_REVIEWS)} reviews. Then I tested them
+          on {fmt(TEST_SET.reviews)} reviews of {TEST_SET.games} games released
+          in 2025-26, newer than anything they trained on
         </p>
         <a href={REPO} className={styles.repo}>
           View the code on GitHub
         </a>
       </header>
+
+      <section className={styles.section}>
+        <h2>Try it</h2>
+        <p className={styles.text}>
+          Write a review or pick a sample, and three of the models judge it
+          live. Each one says &ldquo;Recommended&rdquo; when its score reaches
+          its own threshold, the tick on its bar.
+        </p>
+        <SentimentDemo />
+      </section>
 
       <section className={styles.section}>
         <h2>Results</h2>

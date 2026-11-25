@@ -1,5 +1,6 @@
 import { BiLSTM, NaiveBayes, TextCNN } from './classifiers';
 import { readTensors, type TensorSpec } from './nn';
+import { encode, tokenize } from './tokenize';
 
 export type ModelId = 'nb' | 'textcnn' | 'bilstm';
 
@@ -73,4 +74,27 @@ export async function loadModels(base = '/models/steam/'): Promise<Models> {
     bytes(m.models.bilstm.file),
   ]);
   return buildModels(m, { vocab, nbVocab, nb, textcnn, bilstm });
+}
+
+export type Judgement = {
+  text: string;
+  scores: Record<ModelId, number>;
+  tokens: string[];
+  attention: number[];
+};
+
+export function judge(models: Models, text: string): Judgement {
+  const { maxLen, unkId } = models.manifest;
+  const ids = encode(text, models.vocab, maxLen, unkId);
+  const { prob, attention } = models.bilstm.predict(ids);
+  return {
+    text,
+    scores: {
+      nb: models.nb.predict(text),
+      textcnn: models.textcnn.predict(ids),
+      bilstm: prob,
+    },
+    tokens: tokenize(text).slice(0, maxLen),
+    attention,
+  };
 }

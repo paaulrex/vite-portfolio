@@ -2,8 +2,13 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'vitest';
 
-import { buildModels, type Manifest, type ModelId } from '../app/steam/models';
-import { encode } from '../app/steam/tokenize';
+import {
+  buildModels,
+  judge,
+  type Manifest,
+  type ModelId,
+} from '../app/steam/models';
+import { encode, tokenSpans, tokenize } from '../app/steam/tokenize';
 
 /** One review from test/fixtures/steam-parity.json (written by export_web.py). */
 type Case = {
@@ -105,5 +110,31 @@ describe('verdicts match the original models', () => {
     expect(models.bilstm.predict(c.ids).prob >= t.bilstm).toBe(
       c.bilstm >= t.bilstm,
     );
+  });
+});
+
+describe('tokenSpans', () => {
+  it.each(cases)('%s', (_, c) => {
+    if (c.text.toLowerCase().length !== c.text.length) return;
+    const words = tokenSpans(c.text).map(([start, end]) =>
+      c.text.slice(start, end).toLowerCase(),
+    );
+    expect(words).toEqual(tokenize(c.text));
+  });
+
+  it('gives up when lowercasing changes the length', () => {
+    expect('İ'.toLowerCase()).toHaveLength(2);
+    expect(tokenSpans('İyi oyun')).toEqual([]);
+  });
+});
+
+describe('judge', () => {
+  it.each(cases)('%s', (_, c) => {
+    const j = judge(models, c.text);
+    expect(j.text).toBe(c.text);
+    expect(j.scores.nb).toBeCloseTo(c.nb, 4);
+    expect(j.scores.textcnn).toBeCloseTo(c.textcnnInt8, 4);
+    expect(j.scores.bilstm).toBeCloseTo(c.bilstmInt8, 4);
+    expect(j.tokens).toHaveLength(j.attention.length);
   });
 });

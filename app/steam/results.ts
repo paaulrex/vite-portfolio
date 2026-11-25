@@ -59,3 +59,5 @@ export const TEST_SET = {
   recommendedShare: 0.6814,
   allWrong: 25_900,
 };
+
+export const REPO = 'https://github.com/paaulrex/AI574-Sentiment-Analysis';

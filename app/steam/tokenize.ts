@@ -14,6 +14,15 @@ export function encode(
     .map((t) => vocab.get(t) ?? unkId);
 }
 
+export function tokenSpans(text: string): [number, number][] {
+  const lower = text.toLowerCase();
+  if (lower.length !== text.length) return [];
+  return [...lower.matchAll(WORD)].map((m): [number, number] => [
+    m.index,
+    m.index + m[0].length,
+  ]);
+}
+
 export function nbTerms(text: string): string[] {
   const plain = text
     .toLowerCase()
